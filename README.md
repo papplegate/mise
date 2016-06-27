@@ -4,6 +4,16 @@
 
 Clears the workspace. Useful for the beginnings of R scripts, to avoid potential problems with accidentally using information from variables or functions from previous script evaluations, too many figure windows open at the same time, packages that you don't need any more, or a cluttered console.
 
+## Installation
+
+From within R, 
+
+```
+install.packages("devtools")
+library("devtools")
+install_github("papplegate/mise")
+```
+
 ## Usage
 
 `mise(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE)`
