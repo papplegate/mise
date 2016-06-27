@@ -6,14 +6,14 @@ Clears the workspace. Useful for the beginnings of R scripts, to avoid potential
 
 ## Usage
 
-mise(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE)
+`mise(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE)`
 
 ## Arguments
 
-vars	clear all variables in the parent environment?
-figs	close all figure windows?
-pkgs	clear all non-base packages?
-console	clear the console?
+`vars`	clear all variables in the parent environment?  
+`figs`	close all figure windows?  
+`pkgs`	clear all non-base packages?  
+`console`	clear the console?  
 
 ## Details
 
