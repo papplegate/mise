@@ -23,9 +23,11 @@ http://stackoverflow.com/questions/29758000/function-to-remove-all-variables   h
 
 ## Examples
 
+```
 library(mise)
 x <- seq(1, 10, by = 1)
 y <- x+ rnorm(10, mean = 0, sd = 1)
 plot(x, y)
 ls()
 mise()
+```
