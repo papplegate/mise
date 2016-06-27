@@ -1,0 +1,97 @@
+getwd()
+source("mise.R")
+mise()
+source("/Users/pja148/Documents/mise/R/mise.R")
+mise()
+ls()
+help(ls)
+ls(all.names = TRUE)
+mise <- function(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE) {#
+#
+  # delete all variables and functions from memory#
+  # source: user David Robinson, http://stackoverflow.com/questions/29758000/function-to-remove-all-variables#
+  if (vars) {#
+    where <- parent.frame()#
+    rm(list = ls(env = where), envir = where)#
+  }#
+  # close all open plots#
+  # source: user shadow, http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r#
+  if (figs) {#
+    graphics.off()#
+  }#
+  # unload packages#
+  # source: users Gavin Simpson and Ramnath, http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r#
+  if (pkgs) {#
+    extra.pkgs <- paste("package:", names(sessionInfo()$otherPkgs), sep = "")#
+    # extra.pkgs <- extra.pkgs[-(extra.pkgs == "package:spam")]#
+    lapply(extra.pkgs, detach, character.only = TRUE, unload = TRUE, force = TRUE)#
+  }#
+  # clear the console#
+  # source: users Joshua Ulrich and E Luxo So, http://stackoverflow.com/questions/14260340/function-to-clear-the-console-in-r#
+  if (console) {#
+    # cat(rep("\n", 50))#
+    cat("\014")#
+  }#
+} # end function mise
+ls()
+mise()
+mise <- function(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE) {}
+mise()
+help(vars)
+help(figs)
+help(pkgs)
+help(console)
+vars
+vars = TRUE
+# delete all variables and functions from memory#
+  # source: user David Robinson, http://stackoverflow.com/questions/29758000/function-to-remove-all-variables#
+  if (vars) {#
+    where <- parent.frame()#
+    rm(list = ls(env = where), envir = where)#
+  }
+ls()
+plot(1, 1)
+# close all open plots#
+  # source: user shadow, http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r#
+  if (figs) {#
+    graphics.off()#
+  }
+figs = 1
+figs = TRUE
+# close all open plots#
+  # source: user shadow, http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r#
+  if (figs) {#
+    graphics.off()#
+  }
+library(fields)
+pkgs = TRUE
+# unload packages#
+  # source: users Gavin Simpson and Ramnath, http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r#
+  if (pkgs) {#
+    extra.pkgs <- paste("package:", names(sessionInfo()$otherPkgs), sep = "")#
+    # extra.pkgs <- extra.pkgs[-(extra.pkgs == "package:spam")]#
+    lapply(extra.pkgs, detach, character.only = TRUE, unload = TRUE, force = TRUE)#
+  }
+console = TRUE
+# clear the console#
+  # source: users Joshua Ulrich and E Luxo So, http://stackoverflow.com/questions/14260340/function-to-clear-the-console-in-r#
+  if (console) {#
+    # cat(rep("\n", 50))#
+    cat("\014")#
+  }
+isRStudio <- Sys.getenv("RSTUDIO") == "1"
+isRStudio <- Sys.getenv("RSTUDIO") == "1"
+isRStudio
+Sys.getenv
+Sys.getenv()
+Sys.getenv("RSTUDIO")=="1" [1] TRUE
+Sys.getenv("RSTUDIO")=="1" [1]
+Sys.getenv("RSTUDIO")=="1"
+cat("\014")
+cat(rep("\n",50))
+system("clear")
+if (Sys.getenv("RSTUDIO") == 1) {#
+      cat("\014")#
+    } else {#
+      cat(rep("\n",50))#
+    }
