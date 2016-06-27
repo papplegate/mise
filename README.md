@@ -17,7 +17,8 @@ Clears the workspace. Useful for the beginnings of R scripts, to avoid potential
 
 ## Details
 
-Based on StackOverflow contributions from users David Robinson, shadow, Gavin Simpson, Ramnath, Joshua Ulrich, E Luxo So, and krlmlr; see 
+Based on StackOverflow contributions from users David Robinson, shadow, Gavin Simpson, Ramnath, Joshua Ulrich, E Luxo So, and krlmlr; see  
+
 http://stackoverflow.com/questions/29758000/function-to-remove-all-variables   http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r   http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r   http://stackoverflow.com/questions/12389158/check-if-r-is-running-in-rstudio  
 
 ## Examples
