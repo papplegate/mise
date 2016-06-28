@@ -14,7 +14,7 @@
 #' http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r
 #' http://stackoverflow.com/questions/12389158/check-if-r-is-running-in-rstudio
 #'
-#' @param vars clear all variables in the parent environment?
+#' @param vars clear all variables and functions in the parent environment?
 #' @param figs close all figure windows?
 #' @param pkgs clear all non-base packages?
 #' @param console clear the console?
@@ -26,28 +26,30 @@
 #' y <- x+ rnorm(10, mean = 0, sd = 1)
 #' plot(x, y)
 #' ls()
-#' mise()
+#' # change figs to TRUE to also clear the figure
+#' mise(figs = FALSE)
 #' ls()
 
 mise <- function(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE) {
+
+  # close all open plots
+  # source: user shadow, http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
+  if (figs && !is.null(grDevices::dev.list())) {
+    # plot(1, 1)
+    grDevices::graphics.off()
+  }
 
   # delete all variables and functions from memory
   # source: user David Robinson, http://stackoverflow.com/questions/29758000/function-to-remove-all-variables
   if (vars) {
     where <- parent.frame()
-    rm(list = ls(env = where), envir = where)
-  }
-
-  # close all open plots
-  # source: user shadow, http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
-  if (figs) {
-    graphics.off()
+    rm(list = ls(envir = where), envir = where)
   }
 
   # unload packages
   # source: users Gavin Simpson and Ramnath, http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r
   if (pkgs) {
-    extra.pkgs <- paste("package:", names(sessionInfo()$otherPkgs), sep = "")
+    extra.pkgs <- paste("package:", names(utils::sessionInfo()$otherPkgs), sep = "")
     lapply(extra.pkgs, detach, character.only = TRUE, unload = TRUE, force = TRUE)
   }
 

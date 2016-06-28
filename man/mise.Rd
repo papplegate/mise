@@ -17,14 +17,14 @@ mise(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE)
 }
 \description{
 Clears the workspace.  Useful for the beginnings of R scripts, to
-avoid potential problems with accidentally using information from 
-variables or functions from previous script evaluations, too many 
-figure windows open at the same time, packages that you don't 
+avoid potential problems with accidentally using information from
+variables or functions from previous script evaluations, too many
+figure windows open at the same time, packages that you don't
 need any more, or a cluttered console.
 }
 \details{
-Based on StackOverflow contributions from users David Robinson, 
-shadow, Gavin Simpson, Ramnath, Joshua Ulrich, E Luxo So, 
+Based on StackOverflow contributions from users David Robinson,
+shadow, Gavin Simpson, Ramnath, Joshua Ulrich, E Luxo So,
 and krlmlr; see
 http://stackoverflow.com/questions/29758000/function-to-remove-all-variables
 http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
@@ -37,7 +37,9 @@ x <- seq(1, 10, by = 1)
 y <- x+ rnorm(10, mean = 0, sd = 1)
 plot(x, y)
 ls()
-mise()
+# change figs to TRUE to also clear the figure
+mise(figs = FALSE)
+ls()
 }
 \keyword{clear}
 \keyword{detach,}

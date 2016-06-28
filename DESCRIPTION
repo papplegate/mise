@@ -11,7 +11,7 @@ Description: Clears the workspace. Useful for the beginnings of R scripts, to
     pointers to the relevant StackOverflow pages.
 Depends:
     R (>= 3.3.0)
-License: GPLv3
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
