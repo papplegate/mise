@@ -7,7 +7,7 @@
 mise(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE)
 }
 \arguments{
-\item{vars}{clear all variables in the parent environment?}
+\item{vars}{clear all variables and functions in the parent environment?}
 
 \item{figs}{close all figure windows?}
 

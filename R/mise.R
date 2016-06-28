@@ -32,18 +32,18 @@
 
 mise <- function(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE) {
 
-  # close all open plots
-  # source: user shadow, http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
-  if (figs && !is.null(grDevices::dev.list())) {
-    # plot(1, 1)
-    grDevices::graphics.off()
-  }
-
   # delete all variables and functions from memory
   # source: user David Robinson, http://stackoverflow.com/questions/29758000/function-to-remove-all-variables
   if (vars) {
     where <- parent.frame()
     rm(list = ls(envir = where), envir = where)
+  }
+
+  # close all open plots
+  # source: user shadow, http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
+  if (figs && !is.null(grDevices::dev.list())) {
+    # plot(1, 1)
+    grDevices::graphics.off()
   }
 
   # unload packages
