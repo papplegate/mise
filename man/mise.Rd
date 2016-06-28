@@ -30,6 +30,7 @@ http://stackoverflow.com/questions/29758000/function-to-remove-all-variables
 http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
 http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r
 http://stackoverflow.com/questions/12389158/check-if-r-is-running-in-rstudio
+l
 }
 \examples{
 library(mise)

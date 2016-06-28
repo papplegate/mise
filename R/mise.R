@@ -13,7 +13,7 @@
 #' http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
 #' http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r
 #' http://stackoverflow.com/questions/12389158/check-if-r-is-running-in-rstudio
-#'
+#'l
 #' @param vars clear all variables and functions in the parent environment?
 #' @param figs close all figure windows?
 #' @param console clear the console?
