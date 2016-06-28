@@ -4,16 +4,16 @@
 \alias{mise}
 \title{Clear the Workspace (Mise en Place)}
 \usage{
-mise(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE)
+mise(vars = TRUE, figs = TRUE, console = TRUE, pkgs = FALSE)
 }
 \arguments{
 \item{vars}{clear all variables and functions in the parent environment?}
 
 \item{figs}{close all figure windows?}
 
-\item{pkgs}{clear all non-base packages?}
-
 \item{console}{clear the console?}
+
+\item{pkgs}{clear all non-base packages?  Defaults to FALSE.}
 }
 \description{
 Clears the workspace.  Useful for the beginnings of R scripts, to

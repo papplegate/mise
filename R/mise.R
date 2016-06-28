@@ -16,8 +16,8 @@
 #'
 #' @param vars clear all variables and functions in the parent environment?
 #' @param figs close all figure windows?
-#' @param pkgs clear all non-base packages?
 #' @param console clear the console?
+#' @param pkgs clear all non-base packages?  Defaults to FALSE.
 #' @keywords rm, graphics.off(), detach, clear
 #' @export
 #' @examples
@@ -30,7 +30,7 @@
 #' mise(figs = FALSE)
 #' ls()
 
-mise <- function(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE) {
+mise <- function(vars = TRUE, figs = TRUE, console = TRUE, pkgs = FALSE) {
 
   # delete all variables and functions from memory
   # source: user David Robinson, http://stackoverflow.com/questions/29758000/function-to-remove-all-variables
@@ -46,13 +46,6 @@ mise <- function(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE) {
     grDevices::graphics.off()
   }
 
-  # unload packages
-  # source: users Gavin Simpson and Ramnath, http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r
-  if (pkgs) {
-    extra.pkgs <- paste("package:", names(utils::sessionInfo()$otherPkgs), sep = "")
-    lapply(extra.pkgs, detach, character.only = TRUE, unload = TRUE, force = TRUE)
-  }
-
   # clear the console
   # first checks to see if RStudio is in use and chooses a command appropriately
   # source: users Joshua Ulrich and E Luxo So, http://stackoverflow.com/questions/14260340/function-to-clear-the-console-in-r
@@ -63,6 +56,13 @@ mise <- function(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE) {
     } else {
       cat(rep("\n",50)) # works in environments other than RStudio
     }
+  }
+
+  # unload packages
+  # source: users Gavin Simpson and Ramnath, http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r
+  if (pkgs) {
+    extra.pkgs <- paste("package:", names(utils::sessionInfo()$otherPkgs), sep = "")
+    lapply(extra.pkgs, detach, character.only = TRUE, unload = TRUE, force = TRUE)
   }
 
 } # end function mise
