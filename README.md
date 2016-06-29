@@ -16,14 +16,14 @@ install_github("papplegate/mise")
 
 ## Usage
 
-`mise(vars = TRUE, figs = TRUE, pkgs = TRUE, console = TRUE)`
+`mise(vars = TRUE, figs = TRUE, console = TRUE, pkgs = FALSE)`
 
 ## Arguments
 
 `vars`	clear all variables in the parent environment?  
 `figs`	close all figure windows?  
-`pkgs`	clear all non-base packages?  
 `console`	clear the console?  
+`pkgs`	clear all non-base packages?  Defaults to FALSE.  
 
 ## Details
 
@@ -39,6 +39,7 @@ x <- seq(1, 10, by = 1)
 y <- x+ rnorm(10, mean = 0, sd = 1)
 plot(x, y)
 ls()
-mise()
+# change figs to TRUE to also clear the figure
+mise(figs = FALSE)
 ls()
 ```
