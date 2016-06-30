@@ -12,7 +12,7 @@ Clears the workspace. Useful for the beginnings of R scripts, to avoid potential
 install.packages("mise")
 ```
 
-Any changes to `mise` will be pushed to this Github repository before the updated package is submitted to CRAN.  To install this version from within R, 
+Any changes to `mise` will be pushed to this Github repository before the updated package is submitted to CRAN.  To install the Github version of `mise` from within R, 
 
 ```
 install.packages("devtools")
