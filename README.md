@@ -6,7 +6,13 @@ Clears the workspace. Useful for the beginnings of R scripts, to avoid potential
 
 ## Installation
 
-From within R, 
+**Update, 30 June 2016:** `mise` v0.1.0 is now available from CRAN!  You can install it from the command line in R using 
+
+```
+install.packages("mise")
+```
+
+Any changes to `mise` will be pushed to this Github repository before the updated package is submitted to CRAN.  To install this version from within R, 
 
 ```
 install.packages("devtools")
