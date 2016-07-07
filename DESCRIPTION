@@ -1,6 +1,6 @@
 Package: mise
 Title: Clears the Workspace (Mise en Place)
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person("Patrick", "Applegate", email = "applegatepj@gmail.com",
                   role = c("aut", "cre"))
 Description: Clears the workspace. Useful for the beginnings of R scripts, to
