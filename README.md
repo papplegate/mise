@@ -20,22 +20,34 @@ library("devtools")
 install_github("papplegate/mise")
 ```
 
+## Commands 
+
+`clear_console`	Clear the Console  
+`clear_figs`	Clear All Figures  
+`clear_funs`	Clear All Functions  
+`clear_pkgs`	Clear All Packages  
+`clear_vars`	Clear All Variables  
+`mise`	Clear the Workspace (Mise en Place)  
+
 ## Usage
 
-`mise(vars = TRUE, figs = TRUE, console = TRUE, pkgs = FALSE)`
+`mise(vars = TRUE, funs = TRUE, figs = TRUE, console = TRUE, pkgs = FALSE, where = parent.frame(1))`
 
 ## Arguments
 
 `vars`	clear all variables in the parent environment?  
+`funs`  clear all functions in the parent environment?  
 `figs`	close all figure windows?  
 `console`	clear the console?  
 `pkgs`	clear all non-base packages?  Defaults to FALSE.  
+`where` which environment to delete variables and functions from; defaults to the calling environment
 
 ## Details
 
-Based on StackOverflow contributions from users David Robinson, shadow, Gavin Simpson, Ramnath, Joshua Ulrich, E Luxo So, and krlmlr; see  
+Based on StackOverflow contributions from users David Robinson, shadow, Gavin Simpson, Ramnath, Joshua Ulrich, E Luxo So, Josh O'Brien, and krlmlr; see  
 
-http://stackoverflow.com/questions/29758000/function-to-remove-all-variables   http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r   http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r   http://stackoverflow.com/questions/12389158/check-if-r-is-running-in-rstudio  
+http://stackoverflow.com/questions/29758000/function-to-remove-all-variables  
+http://stackoverflow.com/questions/8305754/remove-all-variables-except-functions   http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r   http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r   http://stackoverflow.com/questions/12389158/check-if-r-is-running-in-rstudio  
 
 ## Examples
 
