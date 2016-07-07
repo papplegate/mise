@@ -8,17 +8,21 @@
 #'
 #' Based on StackOverflow contributions from users David Robinson,
 #' shadow, Gavin Simpson, Ramnath, Joshua Ulrich, E Luxo So,
-#' and krlmlr; see
+#' Josh O'Brien, and krlmlr; see
 #' http://stackoverflow.com/questions/29758000/function-to-remove-all-variables
+#' http://stackoverflow.com/questions/8305754/remove-all-variables-except-functions
 #' http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
 #' http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r
 #' http://stackoverflow.com/questions/12389158/check-if-r-is-running-in-rstudio
-#'l
-#' @param vars clear all variables and functions in the parent environment?
+#'
+#' @param vars clear all variables in the parent environment?
+#' @param funs clear all functions in the parent environment?
 #' @param figs close all figure windows?
 #' @param console clear the console?
 #' @param pkgs clear all non-base packages?  Defaults to FALSE.
+#' @param where which environment to delete variables and functions from; defaults to the calling environment
 #' @keywords rm, graphics.off(), detach, clear
+#' @import utils
 #' @export
 #' @examples
 #' library(mise)
@@ -30,13 +34,21 @@
 #' mise(figs = FALSE)
 #' ls()
 
-mise <- function(vars = TRUE, figs = TRUE, console = TRUE, pkgs = FALSE) {
+mise <- function(vars = TRUE, funs = TRUE, figs = TRUE, console = TRUE, pkgs = FALSE, where = parent.frame(1)) {
 
-  # delete all variables and functions from memory
+  # find the parent environment and store it
+  # where <- parent.frame()
+
+  # delete all variables from memory
   # source: user David Robinson, http://stackoverflow.com/questions/29758000/function-to-remove-all-variables
+  # also see reply by user Josh O'Brien on http://stackoverflow.com/questions/8305754/remove-all-variables-except-functions
   if (vars) {
-    where <- parent.frame()
-    rm(list = ls(envir = where), envir = where)
+    rm(list = setdiff(ls(all.names = TRUE, envir = where), lsf.str(all.names = TRUE, envir = where)), envir = where)
+  }
+
+  # delete all functions from memory
+  if (funs) {
+    rm(list = lsf.str(all.names = TRUE, envir = where), envir = where)
   }
 
   # close all open plots

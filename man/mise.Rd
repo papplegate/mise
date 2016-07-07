@@ -4,16 +4,21 @@
 \alias{mise}
 \title{Clear the Workspace (Mise en Place)}
 \usage{
-mise(vars = TRUE, figs = TRUE, console = TRUE, pkgs = FALSE)
+mise(vars = TRUE, funs = TRUE, figs = TRUE, console = TRUE,
+  pkgs = FALSE, where = parent.frame(1))
 }
 \arguments{
-\item{vars}{clear all variables and functions in the parent environment?}
+\item{vars}{clear all variables in the parent environment?}
+
+\item{funs}{clear all functions in the parent environment?}
 
 \item{figs}{close all figure windows?}
 
 \item{console}{clear the console?}
 
 \item{pkgs}{clear all non-base packages?  Defaults to FALSE.}
+
+\item{where}{which environment to delete variables and functions from; defaults to the calling environment}
 }
 \description{
 Clears the workspace.  Useful for the beginnings of R scripts, to
@@ -25,12 +30,12 @@ need any more, or a cluttered console.
 \details{
 Based on StackOverflow contributions from users David Robinson,
 shadow, Gavin Simpson, Ramnath, Joshua Ulrich, E Luxo So,
-and krlmlr; see
+Josh O'Brien, and krlmlr; see
 http://stackoverflow.com/questions/29758000/function-to-remove-all-variables
+http://stackoverflow.com/questions/8305754/remove-all-variables-except-functions
 http://stackoverflow.com/questions/19449066/command-to-close-plots-in-r
 http://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r
 http://stackoverflow.com/questions/12389158/check-if-r-is-running-in-rstudio
-l
 }
 \examples{
 library(mise)
